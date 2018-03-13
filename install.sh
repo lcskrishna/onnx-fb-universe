@@ -9,6 +9,7 @@ REPOS_DIR="$top_dir/repos"
 BUILD_DIR="$top_dir/build"
 mkdir -p "$BUILD_DIR"
 
+
 _pip_install() {
     if [[ -n "$CI" ]]; then
         if [[ -z "${SCCACHE_BUCKET}" ]]; then
@@ -37,5 +38,5 @@ python -c 'from caffe2.python import build; from pprint import pprint; pprint(bu
 _pip_install -b "$BUILD_DIR/onnx" "file://$REPOS_DIR/onnx#egg=onnx"
 
 # Install pytorch
-pip install -r "$REPOS_DIR/pytorch/requirements.txt"
-_pip_install -b "$BUILD_DIR/pytorch" "file://$REPOS_DIR/pytorch#egg=torch"
+#pip install -r "$REPOS_DIR/pytorch/requirements.txt"
+#_pip_install -b "$BUILD_DIR/pytorch" "file://$REPOS_DIR/pytorch#egg=torch"
